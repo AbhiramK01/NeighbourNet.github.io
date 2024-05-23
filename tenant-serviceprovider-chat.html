@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tenant-Service Provider Chat</title>
+    <link rel="stylesheet" href="styles.css"> <!-- You may link your CSS file here -->
+</head>
+<body data-page="tenant-service-provider-chat">
+    <div class="chat-container">
+        <h1 id="service-provider-name"></h1>
+        <div id="chat-messages">
+            <!-- Chat messages will be displayed here -->
+        </div>
+        <div class="message-input-container">
+            <input type="text" id="message-input" placeholder="Type your message...">
+            <button id="send-button">Send</button>
+            <!-- Input for uploading images -->
+            <input type="file" id="image-upload" accept="image/*">
+        </div>
+        <button id="close-chat">Close Chat</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1/firebase.js"></script>
+    <script src="chat2.js"></script> <!-- You may link your JavaScript file here -->
+</body>
+</html>

@@ -1,0 +1,926 @@
+/* Importing Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Raleway:wght@400;700&display=swap');
+
+/* Global Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #f0f2f5, #d9e4f5);
+  color: #1a1a1a; /* Change this line to a darker color */
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background 0.5s, color 0.5s;
+}
+
+body.dark-mode {
+  background: linear-gradient(135deg, #2c3e50, #4ca1af);
+  color: #f0f2f5;
+}
+
+section {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  transition: padding 0.3s;
+}
+
+header {
+  text-align: center;
+  padding: 70px 20px;
+  background: linear-gradient(135deg, #6b73ff, #000dff);
+  color: white;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  border-radius: 0 0 50px 50px;
+  position: relative;
+  overflow: hidden;
+  animation: headerFadeIn 2s ease-out;
+}
+
+header::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  top: 0;
+  left: -100%;
+  transform: skewX(-30deg);
+  transition: 0.7s;
+}
+
+header:hover::after {
+  left: 100%;
+}
+
+h1 {
+  font-size: 3.5em;
+  margin: 0.5em 0;
+  animation: fadeInDown 1s ease-out;
+  letter-spacing: 1px;
+  position: relative;
+  color: #fff;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+h1::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  background: #fff;
+  bottom: 0;
+  left: -100%;
+  animation: slideIn 1s forwards;
+}
+
+p {
+  font-size: 1.2em;
+  color: #1a1a1a;
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes headerFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  to {
+    left: 100%;
+  }
+}
+
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #333;
+  color: #f0f2f5;
+  margin-top: 50px;
+  box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.15);
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  animation: footerFadeIn 2s ease-out;
+}
+
+footer p {
+  margin: 0;
+  font-size: 1.1em;
+  letter-spacing: 0.5px;
+}
+
+footer p:hover {
+  cursor: pointer;
+}
+
+
+@keyframes footerFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Form Styles */
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  padding: 50px;
+  border-radius: 15px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  animation: zoomIn 1s ease-out;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 500px;
+  overflow: hidden;
+}
+
+.form::before {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  width: 140%;
+  height: 300%;
+  background: radial-gradient(circle, rgba(107, 115, 255, 0.3), rgba(0, 13, 255, 0.3));
+  z-index: -1;
+  transform: rotate(45deg);
+  transition: 0.5s;
+}
+
+.form:hover::before {
+  top: -50%;
+}
+
+.inputBox {
+  position: relative;
+  margin-bottom: 35px;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.inputBox input {
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  outline: none;
+  background: #f9f9f9;
+  transition: border-color 0.3s, background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+.inputBox input:focus {
+  border-color: #6b73ff;
+  background-color: #fff;
+  box-shadow: 0 5px 15px rgba(107, 115, 255, 0.3);
+  transform: scale(1.05);
+}
+
+.inputBox i {
+  position: absolute;
+  top: 18px;
+  left: 10px;
+  pointer-events: none;
+  transition: 0.3s;
+  color: #999;
+}
+
+.inputBox input:focus + i,
+.inputBox input:valid + i {
+  top: -20px;
+  font-size: 12px;
+  color: #6b73ff;
+}
+
+input[type="submit"] {
+  width: 100%;
+  background-color: #6b73ff;
+  color: #fff;
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 18px;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+input[type="submit"]:hover {
+  background-color: #000dff;
+  transform: scale(1.1);
+  box-shadow: 0 15px 30px rgba(0, 13, 255, 0.3);
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Other Custom Styles */
+.signin {
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  max-width: 600px;
+  width: 100%;
+}
+
+/* Navigation Styles */
+.options {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.options ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.options li {
+  flex: 1 1 100%;
+  max-width: 100%;
+  margin: 10px 0;
+  display: inline-block;
+  animation: fadeInUp 1s ease-out;
+}
+
+.options a {
+  text-decoration: none;
+  color: #6b73ff;
+  font-size: 1.2em;
+  padding: 15px 30px;
+  border: 2px solid #6b73ff;
+  border-radius: 10px;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.options a:hover {
+  background-color: #6b73ff;
+  color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 10px 20px rgba(107, 115, 255, 0.3);
+}
+
+/* Button Styles */
+#contact-directory-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  padding: 20px 40px;
+  background-color: #6b73ff;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0, 13, 255, 0.3);
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+#contact-directory-btn:hover {
+  background-color: #000dff;
+  transform: scale(1.1);
+  box-shadow: 0 20px 40px rgba(0, 13, 255, 0.4);
+}
+
+/* Contact Directory List Styles */
+.contact-directory {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  z-index: 998;
+  background-color: #fff;
+  border: 2px solid #ddd;
+  border-radius: 15px;
+  padding: 30px;
+  max-height: 300px;
+  overflow-y: auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  display: none;
+  animation: fadeInUp 0.7s ease-out;
+}
+
+.contact-directory.visible {
+  display: block;
+}
+
+/* Chat Styles */
+.chat-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 0.7s ease-out;
+}
+
+#chat-messages {
+  margin-bottom: 20px;
+  overflow-y: auto;
+  max-height: 500px;
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.message-input {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+#message-input {
+  flex: 1;
+  padding: 15px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#message-input:focus {
+  border-color: #6b73ff;
+  box-shadow: 0 5px 15px rgba(107, 115, 255, 0.3);
+}
+
+#send-button {
+  padding: 15px 30px;
+  background-color: #6b73ff;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+#send-button:hover {
+  background-color: #000dff;
+  transform: scale(1.1);
+  box-shadow: 0 15px 30px rgba(0, 13, 255, 0.3);
+}
+
+#close-chat {
+  display: block;
+  margin: 30px auto;
+  padding: 15px 30px;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+#close-chat:hover {
+  background-color: #c82333;
+  transform: scale(1.1);
+  box-shadow: 0 15px 30px rgba(220, 53, 69, 0.3);
+}
+
+/* Chat Messages */
+.message {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 10px 20px;
+  border-radius: 15px;
+  font-size: 1em;
+  max-width: 70%;
+  animation: messageFadeIn 0.5s ease-out;
+  position: relative;
+}
+
+.message.sender {
+  background: #6b73ff;
+  color: #fff;
+  margin-left: auto;
+  text-align: right;
+  box-shadow: 0 5px 15px rgba(107, 115, 255, 0.3);
+  animation: senderMessageFadeIn 0.5s ease-out;
+}
+
+.message.receiver {
+  background: #f1f1f1;
+  color: #333;
+  margin-right: auto;
+  text-align: left;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  animation: receiverMessageFadeIn 0.5s ease-out;
+}
+
+.message::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.message.sender::after {
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent #6b73ff;
+  right: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.message.receiver::after {
+  border-width: 10px 10px 10px 0;
+  border-color: transparent #f1f1f1 transparent transparent;
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@keyframes messageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes senderMessageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes receiverMessageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  animation: fadeIn 0.5s;
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  max-width: 80%;
+  overflow-y: auto;
+  animation: slideIn 0.7s ease-out;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 30px;
+  cursor: pointer;
+  color: #999;
+  transition: color 0.3s;
+}
+
+.close:hover {
+  color: #333;
+}
+
+/* Service Provider List Styles 
+.service-provider-list {
+  margin-top: 20px;
+}
+
+.service-provider-list.visible {
+  display: block;
+}*/
+
+/* Chat Image Styles */
+.chat-image {
+  max-width: 250px;
+  max-height: 250px;
+  display: block;
+  margin-top: 10px;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.chat-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Logout Button Styles */
+#logout-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+#logout-btn:hover {
+  background-color: #d32f2f;
+  transform: scale(1.2);
+  box-shadow: 0 15px 30px rgba(244, 67, 54, 0.3);
+}
+
+/* Utility Classes */
+.hidden {
+  display: none !important;
+}
+
+.visible {
+  display: block !important;
+}
+
+/* Keyframes for Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 0;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Add this CSS to your stylesheet */
+.close-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  font-weight: bold;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+
+/* Style the switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* Styles for the floating box */
+.floating-box {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 20px;
+  max-width: 90%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+.floating-box h2 {
+  margin-top: 0;
+}
+
+.floating-box div {
+  margin-top: 10px;
+}
+
+/* Additional CSS for the floating box */
+#availableProvidersBox {
+  max-width: 300px; /* Adjust as needed */
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+#availableProvidersBox h2 {
+  margin-top: 0;
+  font-size: 20px;
+  color: #333;
+}
+
+#availableProvidersList {
+  margin-top: 10px;
+}
+
+/* Styling for the close button */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: #999;
+  font-size: 20px;
+}
+
+/* Common Chat Button Styles */
+.chat-button {
+  display: inline-block;
+  padding: 10px 20px; /* Reduced padding */
+  margin: 10px;
+  font-size: 1em; /* Reduced font size */
+  font-weight: 600;
+  color: #fff;
+  background-color: #6b73ff; /* Matching the theme color */
+  border: none;
+  border-radius: 25px; /* Reduced border radius */
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 5px 10px rgba(107, 115, 255, 0.3); /* Reduced box-shadow */
+}
+
+.chat-button:hover {
+  background-color: #000dff; /* Darker shade for hover effect */
+  transform: scale(1.05); /* Reduced hover scale */
+  box-shadow: 0 10px 20px rgba(0, 13, 255, 0.4); /* Reduced box-shadow */
+}
+
+/* Style for invalid input fields */
+input.error {
+  border: 2px solid red;
+  animation: wobble 0.3s;
+}
+
+/* Style for error messages */
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+  display: none; /* Initially hidden */
+}
+
+/* Wobble animation */
+@keyframes wobble {
+  0%, 100% {
+      transform: translateX(0);
+  }
+  25% {
+      transform: translateX(-5px);
+  }
+  75% {
+      transform: translateX(5px);
+  }
+}
+
+/* Add this to your CSS file or inside a <style> tag in your HTML */
+.custom-alert {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #f44336; /* Red background */
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  max-width: 400px;
+}
+
+.custom-alert.hidden {
+  display: none;
+}
+
+.custom-alert button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.custom-alert button:hover {
+  text-decoration: underline;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  header {
+    padding: 40px 20px;
+  }
+
+  h1 {
+    font-size: 2.5em;
+  }
+
+  .form {
+    padding: 30px;
+  }
+
+  .inputBox input {
+    padding: 10px;
+    font-size: 14px;
+    width: 100%;
+  box-sizing: border-box;
+  }
+
+  input[type="submit"] {
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  footer {
+    padding: 20px;
+  }
+
+  footer p {
+    font-size: 1em;
+  }
+
+  .chat-container {
+    padding: 20px;
+  }
+
+  #chat-messages {
+    padding: 10px;
+    width: 100%;
+  }
+
+  .message {
+    max-width: 100%;
+    width: auto;
+  word-wrap: break-word;
+  }
+
+  .modal-content {
+    margin: 10% auto;
+    padding: 20px;
+    max-width: 90%;
+  }
+
+  .options a {
+    padding: 10px 20px;
+    font-size: 1em;
+  }
+
+  .floating-box {
+    width: calc(100% - 40px);
+  }
+}
+

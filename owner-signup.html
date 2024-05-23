@@ -1,0 +1,104 @@
+<!--owner-signup.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owner Sign Up</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<div id="custom-alert" class="custom-alert hidden">
+    <span id="custom-alert-message"></span>
+    <button id="custom-alert-close" onclick="closeCustomAlert()">Close</button>
+</div>
+<body data-page="owner-signup">
+    <section>
+        <!-- Header section -->
+        <header>
+            <h1>NeighbourNet</h1>
+        </header>
+        <!-- Signup form section -->
+        <div class="signin">
+            <div class="content">
+                <h2>Owner Sign Up</h2>
+                <form id="signup-form" class="form" >
+                    <table>
+                        <tbody>
+                            <tr>
+                                <!-- First column -->
+                                <td>
+                                    <div class="inputBox">
+                                        <input type="text" id="firstName" required>
+                                        <i>First Name</i>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="inputBox">
+                                        <input type="text" id="lastName" required>
+                                        <i>Last Name</i>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="inputBox">
+                                        <input type="email" id="email" required>
+                                        <i>Email</i>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="inputBox">
+                                        <input type="tel" id="phone" required>
+                                        <i>Phone</i>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <!-- Second column -->
+                                <td>
+                                    <div class="inputBox">
+                                        <input type="text" id="property" required>
+                                        <i>Property</i>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="inputBox">
+                                        <input type="text" id="address" required>
+                                        <i>Address</i>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <div class="inputBox">
+                                        <input type="password" id="password" required>
+                                        <i>Password</i>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <div class="inputBox">
+                                        <input type="password" id="confirmPassword" required>
+                                        <i>Confirm Password</i>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- Submit button -->
+                    <input type="submit" value="Sign Up" id="submitdata" name="submitdata">
+                </form>
+            </div>
+        </div>
+        <!-- Footer section -->
+        <footer>
+            <p>&copy; 2024 NeighbourNet</p>
+        </footer>
+    </section>
+    <!-- Firebase script and custom JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+    <script src="mail.js"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owner Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<div id="custom-alert" class="custom-alert hidden">
+    <span id="custom-alert-message"></span>
+    <button id="custom-alert-close" onclick="closeCustomAlert()">Close</button>
+</div>
+<body data-page="owner-dashboard">
+    <section>
+        <!-- Header section -->
+        <header>
+            <h1>Owner Dashboard</h1>
+            <button id="logout-btn" onclick="logoutOwner()">Logout</button>
+        </header>
+        <!-- Owner Dashboard form section -->
+        <div class="signin">
+            <div class="content">
+                <h2>Owner Dashboard</h2>
+                <form id="create-id-form" class="form" onsubmit="submitCreateIdForm(e); return false;">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <!-- First column -->
+                                <td>
+                                    <div class="inputBox">
+                                        <input type="text" id="username" required>
+                                        <i>Username</i>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="inputBox">
+                                        <input type="password" id="password" required>
+                                        <i>Password</i>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <!-- Second column -->
+                                <td>
+                                    <div class="inputBox">
+                                        <input type="email" id="email" required>
+                                        <i>Email</i>
+                                    </div>
+                                </td>
+                                <td align="right">
+                                    <div class="inputBox">
+                                        <select id="user-type" onchange="toggleHouseNumber()" required>
+                                            <option value="tenant">Tenant</option>
+                                            <option value="service-provider">Service Provider</option>
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr id="house-number-row">
+                                <!-- House number row -->
+                                <td colspan="2">
+                                    <div class="inputBox">
+                                        <input type="text" id="house-number">
+                                        <i>House Number</i>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <!-- Mobile number row -->
+                                <td>
+                                    <div class="inputBox">
+                                        <input type="text" id="mobile-number" required>
+                                        <i>Mobile Number</i>
+                                    </div>
+                                </td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- Submit button -->
+                    <input type="submit" value="Create Login ID">
+                </form>
+            </div>
+        </div>
+        <!-- Footer section -->
+        <footer>
+            <p>&copy; 2024 NeighbourNet</p>
+        </footer>
+    </section>
+    <button id="contact-directory-btn" onclick="displayContactDirectory()">Contact Directory</button>
+    <!-- Contact Directory List -->
+    <div id="contact-directory" class="contact-directory hidden">
+        <!-- Contact list will be displayed here -->
+    </div>
+    <!-- Firebase script and custom JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-firestore.js"></script>
+
+
+    <script src="mail1.js"></script>
+</body>
+</html>

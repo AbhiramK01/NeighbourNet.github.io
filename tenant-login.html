@@ -1,0 +1,47 @@
+<!--tenant-login.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tenant Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<div id="custom-alert" class="custom-alert hidden">
+    <span id="custom-alert-message"></span>
+    <button id="custom-alert-close" onclick="closeCustomAlert()">Close</button>
+</div>
+
+<body data-page="tenant-login">
+    <section>
+        
+        <header>
+            <h1>NeighbourNet</h1>
+        </header>
+        <div class="signin">
+            <div class="content">
+                <h2>Tenant Login</h2>
+                <form id="tenant-login-form" class="form" action="tenant-dashboard.html" onsubmit="submitTenantLoginForm(event); return false;">
+                    <div class="inputBox">
+                        <input type="email" id="tenant-login-email" required>
+                        <i>Email</i>
+                    </div>
+                    <div class="inputBox">
+                        <input type="password" id="tenant-login-password" required>
+                        <i>Password</i>
+                    </div>
+                    <input type="submit" value="Login">
+                </form>
+            </div>
+        </div>
+        <footer>
+            <p>&copy; 2024 NeighbourNet</p>
+        </footer>
+    </section>
+    <!-- Firebase script and custom JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+    <script src="mail1.js"></script>
+</body>
+</html>

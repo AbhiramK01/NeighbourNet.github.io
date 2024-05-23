@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Provider Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="service-provider-dashboard">
+    <section>
+        <!-- Header section -->
+        <header>
+            <h1>Service Provider Dashboard</h1>
+            <button id="logout-btn" onclick="logoutServiceProvider()">Logout</button>
+        </header>
+        <!-- Service Provider Dashboard section -->
+        <div class="dashboard-container">
+            <div class="left-half">
+                <div class="content">
+                    <h2>Service Provider Dashboard</h2>
+                    <button class="chat-button owner-chat" id="owner-chat" onclick="ownerChat()">Owner Chat</button>
+                    <button id="contact-directory-btn" onclick="displayContactDirectory()">Contact Directory</button>
+                    <!-- Contact Directory List -->
+                    <div id="contact-directory" class="contact-directory hidden">
+                        <!-- Contact list will be displayed here -->
+                    </div>
+                </div>
+            </div>
+            <div class="right-half">
+                <!-- HTML for the availability switch -->
+                <div class="switch-container">
+                    <label class="switch">
+                        <input type="checkbox" id="availabilitySwitch">
+                        <span class="slider"></span>
+                    </label>
+                    <p id="statusText">Not Available</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer section -->
+        <footer>
+            <p>&copy; 2024 NeighbourNet</p>
+        </footer>
+    </section>
+
+    <!-- Firebase script and custom JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1/firebase.js"></script>
+    <script src="serviceProvider.js"></script>
+</body>
+</html>

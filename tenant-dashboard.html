@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tenant Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="tenant-dashboard">
+    <header>
+        <h1>Tenant Dashboard</h1>
+        <button id="logout-btn" onclick="logoutTenant()">Logout</button>
+    </header>
+    <div class="dashboard-container">
+        <h1>Welcome <span id="tenant-username"></span></h1>
+        <div id="tenant-data">
+            <!-- Tenant data will be displayed here -->
+        </div>
+        <button class="chat-button owner-chat" id="owner-chat">Owner Chat</button>
+        <button class="chat-button service-provider-chat" id="service-provider-chat" onclick="displayServiceProviderModal()">Service Provider Chat</button>
+        <button class="chat-button tenant-chat" id="tenant-chat" onclick="displayTenantModal()">Tenant Chat</button>
+        <div id="showAvailableProvidersButtonContainer"></div>
+        </div>
+
+<!-- Floating box for Available Service Providers -->
+<div id="availableProvidersBox" class="floating-box">
+    <h2>Available Service Providers</h2>
+    <div id="availableProvidersList"></div>
+    <!-- Close button for the floating box -->
+<span class="close-button" onclick="closeAvailableProvidersBox()">&times;</span>
+</div>
+
+<!-- Button container for 'Show Available Service Providers' button -->
+
+
+
+    <div id="service-provider-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('service-provider-modal')">&times;</span>
+            <h2>Service provider List</h2>
+            <div id="service-provider-list" class="service-provider-list">
+                <!-- Service provider list will be displayed here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Tenant Modal -->
+<div id="tenant-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('tenant-modal')">&times;</span>
+        <h2>Tenant List</h2>
+        <div id="tenant-list" class="tenant-list">
+            <!-- Tenant list items will be inserted here -->
+        </div>
+    </div>
+</div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1/firebase.js"></script>
+    <script src="mail1.js"></script>
+</body>
+</html>

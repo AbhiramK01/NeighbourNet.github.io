@@ -1,0 +1,48 @@
+<!--owner-login.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owner Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<div id="custom-alert" class="custom-alert hidden">
+    <span id="custom-alert-message"></span>
+    <button id="custom-alert-close" onclick="closeCustomAlert()">Close</button>
+</div>
+
+<body data-page="owner-login">
+    <section>
+        <!-- Header section -->
+        <header>
+            <h1>NeighbourNet</h1>
+        </header>
+        <!-- Login form section -->
+        <div class="signin">
+            <div class="content">
+                <h2>Owner Login</h2>
+                <form id="owner-login-form" class="form">
+                    <div class="inputBox">
+                        <input type="email" id="owner-login-email" required>
+                        <i>Email</i>
+                    </div>
+                    <div class="inputBox">
+                        <input type="password" id="owner-login-password" required>
+                        <i>Password</i>
+                    </div>
+                    <input type="submit" value="Login">
+                </form>
+            </div>
+        </div>
+        <!-- Footer section -->
+        <footer>
+            <p>&copy; 2024 NeighbourNet</p>
+        </footer>
+    </section>
+    <!-- Firebase script and custom JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+    <script src="mail.js"></script>
+</body>
+</html>
